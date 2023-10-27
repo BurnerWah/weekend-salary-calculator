@@ -7,6 +7,8 @@ function $(selector) {
   return document.querySelector(selector)
 }
 
+let totalMonthly = 0
+
 $("#addEmployeeForm").addEventListener("submit", (e) => {
   e.preventDefault()
   console.log("hi")
@@ -27,7 +29,7 @@ $("#addEmployeeForm").addEventListener("submit", (e) => {
     lastName.value,
     id.value,
     title.value,
-    salary.value
+    Number(salary.value)
   )
 
   $("#employeeTable").appendChild(employee)
@@ -37,6 +39,8 @@ $("#addEmployeeForm").addEventListener("submit", (e) => {
   id.value = ""
   title.value = ""
   salary.value = ""
+
+  updateTotalMonthly()
 })
 
 /**
@@ -45,23 +49,27 @@ $("#addEmployeeForm").addEventListener("submit", (e) => {
  * @param {string} lastName
  * @param {(string|number)} id
  * @param {string} title
- * @param {(string|number)} salary
+ * @param {number} salary
  * @returns {HTMLTableRowElement}
  */
 function createEmployee(firstName, lastName, id, title, salary) {
   const row = document.createElement("tr")
 
   const firstNameTD = document.createElement("td")
-  firstNameTD.innerText = firstName
+  firstNameTD.innerHTML = firstName
   const lastNameTD = document.createElement("td")
-  lastNameTD.innerText = lastName
+  lastNameTD.innerHTML = lastName
   const idTD = document.createElement("td")
-  idTD.innerText = id
+  idTD.innerHTML = id
   const titleTD = document.createElement("td")
-  titleTD.innerText = title
+  titleTD.innerHTML = title
   const salaryTD = document.createElement("td")
-  salaryTD.innerText = salary
+  salaryTD.innerHTML = salary
   const deleteTD = document.createElement("td")
+
+  // Saving this so we can reuse this value later
+  const monthlySalary = salary / 12
+  totalMonthly += monthlySalary
 
   row.appendChild(firstNameTD)
   row.appendChild(lastNameTD)
@@ -71,4 +79,8 @@ function createEmployee(firstName, lastName, id, title, salary) {
   row.appendChild(deleteTD)
 
   return row
+}
+
+function updateTotalMonthly() {
+  $("#totalMonthly").innerHTML = totalMonthly
 }
