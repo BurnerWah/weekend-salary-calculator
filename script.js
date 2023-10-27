@@ -10,4 +10,15 @@ function $(selector) {
 $("#addEmployeeForm").addEventListener("submit", (e) => {
   e.preventDefault()
   console.log("hi")
+  const firstName = $("#employeeFirstName")
+  const lastName = $("#employeeLastName")
+  const id = $("#employeeId")
+  const title = $("#employeeTitle")
+  const salary = $("#employeeSalary")
+  console.log("Employee obtained:", {
+    name: `${firstName.value} ${lastName.value}`,
+    id: id.value,
+    title: title.value,
+    salary: salary.value,
+  })
 })
