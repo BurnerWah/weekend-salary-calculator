@@ -8,6 +8,7 @@ function $(selector) {
 }
 
 let totalMonthly = 0
+const TOTAL_MONTHLY_COST = 20000
 
 $("#addEmployeeForm").addEventListener("submit", (e) => {
   e.preventDefault()
@@ -83,4 +84,9 @@ function createEmployee(firstName, lastName, id, title, salary) {
 
 function updateTotalMonthly() {
   $("#totalMonthly").innerHTML = totalMonthly
+  if (totalMonthly > TOTAL_MONTHLY_COST) {
+    $("footer").classList.add("over-budget")
+  } else {
+    $("footer").classList.remove("over-budget")
+  }
 }
