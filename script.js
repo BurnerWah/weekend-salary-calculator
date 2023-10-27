@@ -66,7 +66,16 @@ function createEmployee(firstName, lastName, id, title, salary) {
   titleTD.innerHTML = title
   const salaryTD = document.createElement("td")
   salaryTD.innerHTML = salary
+
   const deleteTD = document.createElement("td")
+  const deleteButton = document.createElement("button")
+  deleteButton.innerText = "❌"
+  deleteButton.addEventListener("click", () => {
+    row.remove()
+    totalMonthly -= salary / 12
+    updateTotalMonthly()
+  })
+  deleteTD.appendChild(deleteButton)
 
   // Saving this so we can reuse this value later
   const monthlySalary = salary / 12
