@@ -21,4 +21,48 @@ $("#addEmployeeForm").addEventListener("submit", (e) => {
     title: title.value,
     salary: salary.value,
   })
+
+  const employee = createEmployee(
+    firstName.value,
+    lastName.value,
+    id.value,
+    title.value,
+    salary.value
+  )
+
+  $("#employeeTable").appendChild(employee)
 })
+
+/**
+ * Creates an Employee element
+ * @param {string} firstName
+ * @param {string} lastName
+ * @param {(string|number)} id
+ * @param {string} title
+ * @param {(string|number)} salary
+ * @returns {HTMLTableRowElement}
+ */
+function createEmployee(firstName, lastName, id, title, salary) {
+  const row = document.createElement("tr")
+
+  const firstNameTD = document.createElement("td")
+  firstNameTD.innerText = firstName
+  const lastNameTD = document.createElement("td")
+  lastNameTD.innerText = lastName
+  const idTD = document.createElement("td")
+  idTD.innerText = id
+  const titleTD = document.createElement("td")
+  titleTD.innerText = title
+  const salaryTD = document.createElement("td")
+  salaryTD.innerText = salary
+  const deleteTD = document.createElement("td")
+
+  row.appendChild(firstNameTD)
+  row.appendChild(lastNameTD)
+  row.appendChild(idTD)
+  row.appendChild(titleTD)
+  row.appendChild(salaryTD)
+  row.appendChild(deleteTD)
+
+  return row
+}
