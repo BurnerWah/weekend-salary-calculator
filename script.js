@@ -31,6 +31,12 @@ $("#addEmployeeForm").addEventListener("submit", (e) => {
   )
 
   $("#employeeTable").appendChild(employee)
+
+  firstName.value = ""
+  lastName.value = ""
+  id.value = ""
+  title.value = ""
+  salary.value = ""
 })
 
 /**
