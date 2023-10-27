@@ -11,7 +11,42 @@
       <h1>Salary Calculator</h1>
     </header>
     <main>
-      <h2>Add Employee</h2>
+      <section id="addEmployee">
+        <h2>Add Employee</h2>
+        <form id="addEmployeeForm">
+          <input
+            id="employeeFirstName"
+            type="text"
+            placeholder="First Name"
+            data-testid="firstNameInput"
+          />
+          <input
+            id="employeeLastName"
+            type="text"
+            placeholder="Last Name"
+            data-testid="lastNameInput"
+          />
+          <input
+            id="employeeId"
+            type="number"
+            placeholder="ID"
+            data-testid="idInput"
+          />
+          <input
+            id="employeeTitle"
+            type="text"
+            placeholder="Title"
+            data-testid="titleInput"
+          />
+          <input
+            id="employeeSalary"
+            type="number"
+            placeholder="Annual Salary"
+            data-testid="annualSalaryInput"
+          />
+          <button type="submit" data-testid="submitButton">Submit</button>
+        </form>
+      </section>
       <h2>Employees</h2>
     </main>
     <footer>
