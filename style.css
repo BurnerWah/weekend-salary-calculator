@@ -78,3 +78,8 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background: #dcdcdc;
 }
+
+.over-budget {
+  background: #ff0000;
+  color: #fcfcfc;
+}
