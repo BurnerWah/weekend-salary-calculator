@@ -66,7 +66,7 @@ function createEmployee(firstName, lastName, id, title, salary) {
   const titleTD = document.createElement("td")
   titleTD.innerHTML = title
   const salaryTD = document.createElement("td")
-  salaryTD.innerHTML = salary
+  salaryTD.innerHTML = salary.toLocaleString()
   salaryTD.classList.add("money")
 
   const deleteTD = document.createElement("td")
@@ -94,7 +94,7 @@ function createEmployee(firstName, lastName, id, title, salary) {
 }
 
 function updateTotalMonthly() {
-  $("#totalMonthly").innerHTML = totalMonthly
+  $("#totalMonthly").innerHTML = totalMonthly.toLocaleString()
   if (totalMonthly > TOTAL_MONTHLY_COST) {
     $("footer").classList.add("over-budget")
   } else {
