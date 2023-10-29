@@ -83,3 +83,10 @@ tbody tr:nth-child(even) {
   background: #ff0000;
   color: #fcfcfc;
 }
+
+#totalMonthly {
+  font-weight: bold;
+}
+#totalMonthly::before {
+  content: "$";
+}
