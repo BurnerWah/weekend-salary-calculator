@@ -66,6 +66,7 @@ function createEmployee(firstName, lastName, id, title, salary) {
   titleTD.innerHTML = title
   const salaryTD = document.createElement("td")
   salaryTD.innerHTML = salary
+  salaryTD.classList.add("money")
 
   const deleteTD = document.createElement("td")
   const deleteButton = document.createElement("button")
