@@ -62,6 +62,7 @@ function createEmployee(firstName, lastName, id, title, salary) {
   lastNameTD.innerHTML = lastName
   const idTD = document.createElement("td")
   idTD.innerHTML = id
+  idTD.classList.add("monospace")
   const titleTD = document.createElement("td")
   titleTD.innerHTML = title
   const salaryTD = document.createElement("td")

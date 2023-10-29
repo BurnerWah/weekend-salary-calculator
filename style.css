@@ -90,3 +90,7 @@ tbody tr:nth-child(even) {
 .money::before {
   content: "$";
 }
+
+.monospace {
+  font-family: "Roboto Mono", monospace;
+}
